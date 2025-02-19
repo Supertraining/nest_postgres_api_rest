@@ -19,7 +19,7 @@ import { ConfigModule } from '@nestjs/config';
       port: Number(process.env.POSTGRES_PORT) ?? 5436,
       username: process.env.POSTGRES_USER ?? 'postgres',
       password: process.env.POSTGRES_PASSWORD ?? 'postgres',
-      database: 'db_crud',
+      database: process.env.POSTGRES_DATABASE,
       autoLoadEntities: true,
       synchronize: true,
       ssl: process.env.POSTGRES_SSL === 'true',
