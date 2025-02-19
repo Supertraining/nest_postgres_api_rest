@@ -1,0 +1,16 @@
+{
+  "material-icon-theme.activeIconPack": "nest",
+  "material-icon-theme.folders.associations": {
+    "src": "nest",
+    "controllers": "controller",
+    "services": "service",
+    "modules": "module",
+    "entities": "class"
+  },
+  "material-icon-theme.files.associations": {
+    "*.module.ts": "nest-module",
+    "*.controller.ts": "nest-controller",
+    "*.service.ts": "nest-service",
+    "*.entity.ts": "nest-entity"
+  }
+}
