@@ -16,6 +16,7 @@ import { Role } from '../common/enums/role.enum';
 import { Auth } from './decorators/auth.decorator';
 import { ActiveUser } from 'src/common/decorators/active-user.decorator';
 import { UserActiveInterface } from 'src/common/interfaces/user-active.interface';
+import { ApiBearerAuth } from '@nestjs/swagger';
 
 @Controller('auth')
 export class AuthController {
@@ -44,6 +45,7 @@ export class AuthController {
   // getProfile(@Request() req: RequestWithUser) {
   //   return this.authService.profile(req.user);
   // }
+  @ApiBearerAuth()
   @Get('profile')
   @Auth(Role.Admin)
   getProfile(@ActiveUser() user: UserActiveInterface) {

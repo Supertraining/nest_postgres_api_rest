@@ -14,7 +14,12 @@ import { Auth } from 'src/auth/decorators/auth.decorator';
 import { Role } from 'src/common/enums/role.enum';
 import { ActiveUser } from 'src/common/decorators/active-user.decorator';
 import { UserActiveInterface } from 'src/common/interfaces/user-active.interface';
+import { ApiBearerAuth, ApiUnauthorizedResponse } from '@nestjs/swagger';
 
+@ApiBearerAuth()
+@ApiUnauthorizedResponse({
+  description: 'Unauthorized',
+})
 @Auth(Role.User)
 @Controller('cats')
 export class CatsController {
